@@ -53,12 +53,6 @@ app.get('/weather', (req, res)=>{
         return res.send({
             error: 'You must provide an address'
         })
-        //     'my404', {
-        //     errorMessage: 'You must provide address in the search bar!!.'+
-        //      ' The search looks like ?address=yourAdress.',
-        //     title: 'Error 404',
-        //     name: 'Error handler'
-        // })
     } 
 
     geocode(req.query.address, (error, {atitude, longtitude, location} = {})=>{
