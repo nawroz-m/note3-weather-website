@@ -9,7 +9,11 @@ const forecast = (latitude, longtitude, callback)=>{
         } else if(body.error){
             callback("Unable to finde location. Try another search!", undefined)
         }else{
-            const data = body.current.weather_descriptions[0]+ ". It is cuurently "+ body.current.temperature + " temperature degres out. It feels like "+ body.current.feelslike+ " degress out." 
+            const data = 
+                 body.current.weather_descriptions[0]+  ". It is cuurently "+ body.current.temperature + " temperature degres out. It feels like "+ body.current.feelslike+ " degress out." +
+                 ". With wind speed "+ body.current.wind_speed + " and wind degree of "+ body.current.wind_degree +
+                 " by cloud cover of "+ body.current.cloudcover + "." 
+
             callback(undefined, data)
         }
     })
